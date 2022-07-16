@@ -1,0 +1,12 @@
+<div class="details" *ngIf="book">
+  <!-- ... -->
+  <!--BS--><ng-container *bmLoggedinOnly><!--BE-->
+    <button class="red" bmConfirm="Remove book?" (confirm)="removeBook()">
+      Remove book
+    </button>
+    <a class="button"
+      [routerLink]="['/admin/edit', book.isbn]">
+      Edit book
+    </a>
+  <!--BS--></ng-container><!--BE-->
+</div>

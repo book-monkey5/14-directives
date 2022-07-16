@@ -1,0 +1,14 @@
+import { Directive, Input, /*BS*/Output, EventEmitter, HostListener/*BE*/ } from '@angular/core';
+
+@Directive({
+  selector: '[bmConfirm]'
+})
+export class ConfirmDirective {
+  @Input('bmConfirm') confirmText?: string;
+  /*BS*/@Output() confirm = new EventEmitter<void>();
+  @HostListener('click') onClick() {
+    if (window.confirm(this.confirmText)) {
+      this.confirm.emit();
+    }
+  }/*BE*/
+}
