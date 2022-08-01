@@ -12,7 +12,9 @@ export class LoggedinOnlyDirective /*BS*/implements OnDestroy/*BE*/ {
   constructor(/*BS*/private authService: AuthService/*BE*/) {
     /*BS*/this.authService.isAuthenticated$.pipe(
       takeUntil(this.destroy$)
-    ).subscribe(isAuthenticated => {})/*BE*/
+    ).subscribe(isAuthenticated => {
+      // TODO
+    });/*BE*/
   }
 
   /*BS*/ngOnDestroy(): void {
